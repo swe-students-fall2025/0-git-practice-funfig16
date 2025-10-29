@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Sign in to </h1>
+<h1 class="tooltip-wrap">💰 Budget Buddy 💰
+  <div class="tooltip-content">
+    Your buddy to help visualize how you plan to and actually spent your money!!
+  </div>
+</h1>
+<form method="post">
+  <div>
+    <input name="email" type="email" placeholder="enter email address" required>
+  </div>
+  <div>
+    <input id="pw" name="password" type="password" placeholder="enter password" required>
+    <button type="button" onclick="toggle('pw')">👁</button>
+  </div>
+  <button type="submit">login</button>
+</form>
+<p>
+  <a href="{{ url_for('forgot') }}">forget password</a> |
+  <a href="{{ url_for('signup') }}">create account</a>
+</p>
+<script>
+function toggle(id){
+  const el = document.getElementById(id);
+  el.type = el.type === 'password' ? 'text' : 'password';
+}
+</script>
+{% endblock %}

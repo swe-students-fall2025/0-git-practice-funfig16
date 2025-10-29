@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title or 'App' }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+<body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flash-list">
+        {% for m in messages %}<li>{{ m }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  {% if session.user_email %}
+    <p class="signed-in">Signed in as: {{ session.user_email }} | <a href="{{ url_for('logout') }}">Logout</a></p>
+  {% endif %}
+
+  <main class="auth">
+    <section class="auth-card">
+      {% if content %}
+        <div>{{ content|safe }}</div>
+      {% else %}
+        {% block content %}{% endblock %}
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>

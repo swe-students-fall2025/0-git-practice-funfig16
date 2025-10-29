@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Reset password</h1>
+<form method="post">
+  <div>
+    <input id="pw" name="password" type="password" placeholder="enter new password" required>
+    <button type="button" onclick="toggle('pw')">👁</button>
+  </div>
+  <div>
+    <input id="pw2" name="confirm_password" type="password" placeholder="confirm new password" required>
+    <button type="button" onclick="toggle('pw2')">👁</button>
+  </div>
+  <button type="submit">Reset</button>
+</form>
+<script>
+function toggle(id){
+  const el = document.getElementById(id);
+  el.type = el.type === 'password' ? 'text' : 'password';
+}
+</script>
+{% endblock %}

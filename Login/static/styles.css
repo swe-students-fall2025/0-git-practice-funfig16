@@ -1,0 +1,145 @@
+.tooltip-wrap{ /*https://stackoverflow.com/questions/11683620/how-to-display-pop-up-text-on-mouse-hover */
+  position: relative;
+}
+.tooltip-wrap .tooltip-content {
+  display: none;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  background-color: #fff;
+  padding: 1em 1.5em;
+  min-width: 14rem;
+  min-height: 5em;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+}
+.tooltip-wrap:hover .tooltip-content {
+  display: block;
+  font-size: small;
+  color: #1d2f5a;
+  background-color: #dde1e8CC;
+  border-radius: 8px;
+
+}
+
+:root{
+  --bg: #f8f9fa;
+  --fg: #111827;
+  --card: #ffffff;
+  --border: rgba(0,0,0,.08);
+  --radius: 16px;
+}
+
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue",
+               Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  line-height: 1.5;
+}
+
+
+.auth{
+  min-height: 100dvh;                 
+  display: grid;
+  place-items: center;               
+  padding: 24px;                      
+}
+
+.auth-card{
+  width: 100%;
+  max-width: 420px;                   
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.08);
+  padding: 24px;                       
+}
+
+
+h1{
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+
+
+p{ margin: 12px 0 0; text-align: center; }
+
+
+form{ margin-top: 12px; }
+form > div{
+  display: flex;           
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+
+input, button{
+  font: inherit;           
+  line-height: 1.25;
+  padding: 10px 12px;      
+  border-radius: 8px;
+}
+
+
+input{
+  flex: 1;                 
+  border: 1px solid var(--border);
+  background: #f3f3f5;
+  outline: none;
+}
+input:focus{
+  border-color: #c9ced6;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.04);
+}
+
+
+button[type="submit"]{
+  width: 100%;
+  background: #030213;
+  color: #fff;
+  border: 1px solid #030213;
+  cursor: pointer;
+  transition: transform .02s ease;
+}
+button[type="submit"]:active{ transform: translateY(1px); }
+
+
+button[type="button"]{
+  background: #ececf0;
+  color: #030213;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+
+.signed-in{
+  max-width: 420px;
+  margin: 12px auto 0;
+  padding: 0 24px;
+  font-size: 14px;
+  text-align: center;
+}
+.flash-list{
+  list-style: none;
+  padding: 8px 16px;
+  margin: 12px auto 0;
+  max-width: 420px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.flash-list li{ padding: 6px 0; text-align: center; }
+
+
+a{ color: #111; text-underline-offset: 2px; }
+a:hover{ text-decoration: underline; }

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Sign up</h1>
+<form method="post">
+  <div>
+    <input name="email" type="email" placeholder="enter email address" required>
+  </div>
+  <div>
+    <input id="pw" name="password" type="password" placeholder="enter password" required>
+    <button type="button" onclick="toggle('pw')">👁</button>
+  </div>
+  <div>
+    <input id="pw2" name="confirm_password" type="password" placeholder="confirm password" required>
+    <button type="button" onclick="toggle('pw2')">👁</button>
+  </div>
+  <button type="submit">create account</button>
+</form>
+<p><a href="{{ url_for('signin') }}">Back to sign in</a></p>
+<script>
+function toggle(id){
+  const el = document.getElementById(id);
+  el.type = el.type === 'password' ? 'text' : 'password';
+}
+</script>
+{% endblock %}
